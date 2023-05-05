@@ -5,12 +5,13 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 import requests
+
 from .serializers import *
 
 
 # Create your views here.
 
-
+# Api for create an account
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def create_account(request):
@@ -19,7 +20,7 @@ def create_account(request):
     if not account_serializer.is_valid():
         return Response({"error": error(account_serializer.errors)}, status=status.HTTP_400_BAD_REQUEST)
     pv = PasswordCharacterValidator(min_length_lower=4, min_length_digit=2,
-                                    min_length_upper=1, min_length_special=1)
+                                    min_length_upper=1, min_length_special=1)  # password validation
     try:
         pv.validate(request.data['password'])
         pass

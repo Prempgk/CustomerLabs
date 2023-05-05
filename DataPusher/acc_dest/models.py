@@ -7,7 +7,7 @@ from django.contrib.auth.password_validation import MinimumLengthValidator
 
 # Create your models here.
 
-class Accounts(models.Model):
+class Accounts(models.Model):  # Accounts model
     account_id = models.AutoField(primary_key=True)
     email_id = models.EmailField(null=False, blank=False, unique=True)
     password = models.CharField(max_length=20, null=False, blank=False)
@@ -18,7 +18,7 @@ class Accounts(models.Model):
     updated_at = models.DateTimeField(null=True, blank=True)
 
 
-class Destinations(models.Model):
+class Destinations(models.Model):   # Destination model
     id = models.AutoField(primary_key=True)
     account = models.ForeignKey(Accounts, on_delete=models.CASCADE)
     url = models.URLField(null=False, blank=False)

@@ -2,9 +2,9 @@ from rest_framework.serializers import ModelSerializer, Serializer, CharField, E
 from .models import *
 
 
-class AccountSerializer(ModelSerializer):
+class AccountSerializer(ModelSerializer):  # Serializer to access the model easily
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):  # To add both read only & write only options to acc secret
         super().__init__(*args, **kwargs)
         if self.context:
             self.fields['acc_secret'].read_only = True
@@ -19,7 +19,7 @@ class AccountSerializer(ModelSerializer):
         }
 
 
-class AccountLoginSerializer(Serializer):
+class AccountLoginSerializer(Serializer):  # custom serializer for an login api validation
     email = EmailField(required=True)
     password = CharField(required=True, max_length=20, min_length=1)
 

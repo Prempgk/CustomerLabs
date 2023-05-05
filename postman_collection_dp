@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "20097d70-21ca-4557-ae6c-767d6b0d3697",
+		"name": "data_pusher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23612044"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "create_account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email_id\": \"testmailcap@gmail.com\",\r\n    \"password\": \"Testmai@1234\",\r\n    \"account_name\": \"Test1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/account/create/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"account",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"premiyadr@gmail.com\",\r\n    \"password\": \"Premm@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/account/login/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"account",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "ba0a333a85514fb78f44a34b4cec93bb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account_id\": 1,\r\n    \"email_id\": \"premiyadr@gmail.com\",\r\n    \"password\": \"Premm@1234\",\r\n    \"account_name\": \"PremTestUpdate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/account/edit/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"account",
+								"edit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "c8fea73901d346eeaabfea30e94dd470",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.115.13.44:5001/account/delete/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"account",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://3.115.13.44:5001/account/all/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"account",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Destination",
+			"item": [
+				{
+					"name": "add_destination",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "ba0a333a85514fb78f44a34b4cec93bb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://www.youtube.com\",\r\n    \"http_method\": \"POST\",\r\n    \"headers\": {\r\n        \"Content-Type\": \"application/json\",\r\n        \"APP_ID\": \"1234APPID1234\",\r\n        \"APP_SECTET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n        \"ACTION\": \"user.update\",\r\n        \"Accept\": \"*\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/destination/add/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"destination",
+								"add",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "ba0a333a85514fb78f44a34b4cec93bb",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.115.13.44:5001/destination/view/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"destination",
+								"view",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "ba0a333a85514fb78f44a34b4cec93bb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"url\": \"https://www.youtube.com\",\r\n    \"http_method\": \"POST\",\r\n    \"headers\": {\r\n        \"ACTION\": \"user.update\",\r\n        \"APP_ID\": \"1234APPID1234\",\r\n        \"Accept\": \"*\",\r\n        \"APP_SECTET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\r\n        \"Content-Type\": \"application/json\"\r\n    },\r\n    \"account\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/destination/edit/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"destination",
+								"edit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_destinations",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "ba0a333a85514fb78f44a34b4cec93bb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/destination/delete/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"destination",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server_data",
+			"item": [
+				{
+					"name": "incoming_data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "CL-X-TOKEN",
+								"value": "ba0a333a85514fb78f44a34b4cec93bb",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"try\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.115.13.44:5001/server/incoming_data/",
+							"protocol": "http",
+							"host": [
+								"3",
+								"115",
+								"13",
+								"44"
+							],
+							"port": "5001",
+							"path": [
+								"server",
+								"incoming_data",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
